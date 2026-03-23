@@ -1,0 +1,40 @@
+# TangSketch Platform Configuration
+# Arduino IDE 2.x — RISC-V (riscv-none-elf-gcc)
+
+name=TangSketch (Tang Nano 9K RISC-V)
+version=1.0.0
+
+compiler.path=
+compiler.c.cmd=riscv-none-elf-gcc
+compiler.c.flags=-c -Os -march=rv32i -mabi=ilp32 -ffreestanding -nostdlib -ffunction-sections -fdata-sections -MMD
+compiler.c.elf.cmd=riscv-none-elf-gcc
+compiler.c.elf.flags=-Os -march=rv32i -mabi=ilp32 -ffreestanding -nostdlib -static -Wl,--gc-sections
+compiler.S.cmd=riscv-none-elf-gcc
+compiler.S.flags=-c -march=rv32i -mabi=ilp32 -x assembler-with-cpp
+compiler.cpp.cmd=riscv-none-elf-g++
+compiler.cpp.flags=-c -Os -march=rv32i -mabi=ilp32 -ffreestanding -nostdlib -ffunction-sections -fdata-sections -fno-exceptions -MMD
+compiler.ar.cmd=riscv-none-elf-ar
+compiler.ar.flags=rcs
+compiler.objcopy.cmd=riscv-none-elf-objcopy
+compiler.size.cmd=riscv-none-elf-size
+
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -I"{build.core.path}" -I"{build.variant.path}" {includes} "{source_file}" -o "{object_file}"
+
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -I"{build.core.path}" -I"{build.variant.path}" {includes} "{source_file}" -o "{object_file}"
+
+recipe.S.o.pattern="{compiler.path}{compiler.S.cmd}" {compiler.S.flags} -DF_CPU={build.f_cpu} -I"{build.core.path}" -I"{build.variant.path}" "{source_file}" -o "{object_file}"
+
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} "{archive_file_path}" "{object_file}"
+
+# Link — {object_files} contains sketch .o, {archive_file} contains core.a (includes crt.S.o)
+# Do NOT add sketch .cpp.o or crt.S.o separately — Arduino already includes them
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {compiler.c.elf.flags} "-T{build.variant.path}/sections.lds" -o "{build.path}/{build.project_name}.elf" {object_files} "{build.path}/{archive_file}"
+
+recipe.objcopy.bin.pattern="{compiler.path}{compiler.objcopy.cmd}" -O binary --only-section=.vector --only-section=.text --only-section=.rodata --only-section=.ctors --only-section=.data "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
+
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
+recipe.size.regex=\.text\s+([0-9]+).*
+
+# Upload
+tools.pico_programmer.upload.pattern=python "{runtime.platform.path}/tools/pico_programmer/upload.py" "{build.path}/{build.project_name}.bin" "{serial.port}"
+tools.pico_programmer.upload.pattern.windows=py "{runtime.platform.path}/tools/pico_programmer/upload.py" "{build.path}/{build.project_name}.bin" "{serial.port}"
