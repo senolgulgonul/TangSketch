@@ -1,0 +1,22 @@
+{
+  "packages": [{
+    "name": "TangSketch",
+    "maintainer": "Senol Gulgonul",
+    "websiteURL": "https://github.com/senolgulgonul/TangSketch",
+    "email": "",
+    "help": { "online": "https://github.com/senolgulgonul/TangSketch/issues" },
+    "platforms": [{
+      "name": "TangSketch (Tang Nano 9K RISC-V)",
+      "architecture": "avr",
+      "version": "1.0.0",
+      "category": "Contributed",
+      "url": "https://github.com/senolgulgonul/TangSketch/releases/download/v1.0.0/TangSketch-BSP.zip",
+      "archiveFileName": "TangSketch-BSP.zip",
+      "checksum": "SHA-256:DE4B13C78399851874C5D22C270496DEA2F639E02C156F7F06D4E21F7E4125F3",
+      "size": "16212",
+      "boards": [{ "name": "Tang Nano 9K (PicoRV32 / picotiny)" }],
+      "toolsDependencies": []
+    }],
+    "tools": []
+  }]
+}
