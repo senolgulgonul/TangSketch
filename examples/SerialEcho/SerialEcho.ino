@@ -19,7 +19,7 @@ void loop() {
     if (Serial.available()) {
         char c = Serial.read();
         Serial.print("Echo: ");
-        Serial.println(c);
+        Serial.println_int(c);
         // Blink LED0 on receive
         digitalWrite(0, LOW);
         delay(50);
