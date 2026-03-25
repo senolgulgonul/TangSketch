@@ -12,6 +12,23 @@
         {
           "name": "TangSketch (Tang Nano 9K)",
           "architecture": "avr",
+          "version": "1.0.1",
+          "category": "Contributed",
+          "help": {
+            "online": "https://github.com/senolgulgonul/TangSketch"
+          },
+          "url": "https://github.com/senolgulgonul/TangSketch/releases/download/v1.0.1/tangsketch-1.0.1.zip",
+          "archiveFileName": "tangsketch-1.0.1.zip",
+          "checksum": "SHA-256:8c41eab31a637e7628860e7430d152cde781db91b23f9afb0dc031cc8a3673ca",
+          "size": "19197",
+          "boards": [
+            { "name": "Tang Nano 9K (TangSketch / PicoRV32)" }
+          ],
+          "toolsDependencies": []
+        },
+        {
+          "name": "TangSketch (Tang Nano 9K)",
+          "architecture": "avr",
           "version": "1.0.0",
           "category": "Contributed",
           "help": {
