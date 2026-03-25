@@ -17,18 +17,6 @@
         "size": "19329",
         "boards": [{ "name": "Tang Nano 9K (PicoRV32 / picotiny)" }],
         "toolsDependencies": []
-      },
-      {
-        "name": "TangSketch (Tang Nano 9K RISC-V)",
-        "architecture": "avr",
-        "version": "1.0.0",
-        "category": "Contributed",
-        "url": "https://github.com/senolgulgonul/TangSketch/releases/download/v1.0.0/TangSketch-BSP.zip",
-        "archiveFileName": "TangSketch-BSP.zip",
-        "checksum": "SHA-256:26762571B55094D43CB2E84BA51D158B2F72BB8AB8A70D82B165E6A788B2E593",
-        "size": "15593",
-        "boards": [{ "name": "Tang Nano 9K (PicoRV32 / picotiny)" }],
-        "toolsDependencies": []
       }
     ],
     "tools": []
