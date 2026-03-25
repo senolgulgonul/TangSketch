@@ -22,7 +22,7 @@ void loop() {
         digitalWrite(i, bitRead(pattern, i) ? HIGH : LOW);
 
     Serial.print("pattern=");
-    Serial.println(pattern);
+    Serial.println_int(pattern);
 
     delay(wait);
 }
