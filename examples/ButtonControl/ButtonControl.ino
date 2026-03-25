@@ -21,6 +21,6 @@ void setup() {
 void loop() {
     int btn = digitalRead(BTN_PIN);
     if (btn==0) digitalWrite(pos, LOW); else digitalWrite(pos, HIGH);
-    Serial.print("S2 :");Serial.println(btn);
+    Serial.print("S2 :");Serial.println_int(btn);
     delay(100);
 }
