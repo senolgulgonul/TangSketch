@@ -19,8 +19,8 @@
           },
           "url": "https://github.com/senolgulgonul/TangSketch/releases/download/v1.0.1/tangsketch-1.0.1.zip",
           "archiveFileName": "tangsketch-1.0.1.zip",
-          "checksum": "SHA-256:942e51dc1bc2cf04052cd747722d3ce6ffe8d3430bbba5ceb4c17202edc670b8",
-          "size": "19325",
+          "checksum": "SHA-256:88cfd39482b4ebd7d0b00e8dd8f03a66c2c7e92771d1b98ad84dafdafa7df961",
+          "size": "19327",
           "boards": [
             {
               "name": "Tang Nano 9K (TangSketch / PicoRV32)"
