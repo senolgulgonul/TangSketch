@@ -1,0 +1,33 @@
+{
+  "packages": [
+    {
+      "name": "tangsketch",
+      "maintainer": "TangSketch Community",
+      "websiteURL": "https://github.com/senolgulgonul/TangSketch",
+      "email": "",
+      "help": {
+        "online": "https://github.com/senolgulgonul/TangSketch"
+      },
+      "platforms": [
+        {
+          "name": "TangSketch (Tang Nano 9K)",
+          "architecture": "riscv",
+          "version": "1.0.0",
+          "category": "Contributed",
+          "help": {
+            "online": "https://github.com/senolgulgonul/TangSketch"
+          },
+          "url": "https://github.com/senolgulgonul/TangSketch/releases/download/v1.0.0/tangsketch-1.0.0.zip",
+          "archiveFileName": "tangsketch-1.0.0.zip",
+          "checksum": "SHA-256:40626f40358d911576c7e2f87b1196c6a21ac2fd2b65e86b2febfd1b3aee70fd",
+          "size": "20341",
+          "boards": [
+            { "name": "Tang Nano 9K (TangSketch / PicoRV32)" }
+          ],
+          "toolsDependencies": []
+        }
+      ],
+      "tools": []
+    }
+  ]
+}
