@@ -21,7 +21,7 @@ void loop() {
         digitalWrite(i, bitRead(count, i) ? LOW : HIGH);
 
     Serial.print("Count: ");
-    Serial.println(count);
+    Serial.println_int(count);
 
     delay(250);
     count = (count + 1) & 0x3F;  // 6-bit counter
